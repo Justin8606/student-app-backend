@@ -1,6 +1,7 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const student = require("./models/student")
 
 const app = express()
 app.use(cors())
@@ -16,3 +17,10 @@ app.get("/contact",(req,res)=>{
 app.listen(8080,()=>{
     console.log("server")
 })
+
+app.post("/add",(req,res)=>{
+    res.send("test")
+})
+
+let studentmodel=mongoose.model("student",schema);
+module.exports={studentmodel}
